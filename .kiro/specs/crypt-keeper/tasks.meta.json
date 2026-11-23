@@ -1,0 +1,545 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Scaffold the Vite and React project": [
+      {
+        "executionId": "5a08fb08-db9e-4448-b480-ce4f8f2d658c",
+        "chatSessionId": "sess_e0c00f01-3460-45df-95b3-a88da0b40bdc",
+        "timestamp": 1794473716881
+      },
+      {
+        "executionId": "d8f30196-8b2c-4b6c-944b-3253dc8c4a1e",
+        "chatSessionId": "sess_e0c00f01-3460-45df-95b3-a88da0b40bdc",
+        "timestamp": 1794480803046
+      },
+      {
+        "executionId": "9210fbf1-6ea3-4134-8e24-a23f052b467d",
+        "chatSessionId": "sess_e0c00f01-3460-45df-95b3-a88da0b40bdc",
+        "timestamp": 1794492323126
+      }
+    ],
+    "1. Project setup": [
+      {
+        "executionId": "9210fbf1-6ea3-4134-8e24-a23f052b467d",
+        "chatSessionId": "sess_e0c00f01-3460-45df-95b3-a88da0b40bdc",
+        "timestamp": 1794492336857
+      }
+    ],
+    "2.1 Implement `logic/storageCodec.js` and data shape validators": [
+      {
+        "executionId": "b987cee1-fb03-4012-919d-5b40a26cd994",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794506359771
+      },
+      {
+        "executionId": "b987cee1-fb03-4012-919d-5b40a26cd994",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794508972077
+      }
+    ],
+    "3.1 Implement `logic/validation.js`": [
+      {
+        "executionId": "1c9c7b2e-9be2-4415-afa4-acdcbb517cf3",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794564755615
+      },
+      {
+        "executionId": "1c9c7b2e-9be2-4415-afa4-acdcbb517cf3",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794564823750
+      }
+    ],
+    "3. Validation": [
+      {
+        "executionId": "1c9c7b2e-9be2-4415-afa4-acdcbb517cf3",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794564825169
+      }
+    ],
+    "4.1 Implement `parseMinutes`, `defaultSettings` and `formatMMSS` in `logic/timer.js`": [
+      {
+        "executionId": "0c32d032-96f4-486d-9676-c4d361e077d0",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794569713390
+      },
+      {
+        "executionId": "0c32d032-96f4-486d-9676-c4d361e077d0",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794569809837
+      }
+    ],
+    "4.5 Implement `logic/candleHeight.js`": [
+      {
+        "executionId": "e76844c1-fcb2-43a0-9e41-b8ccb584d4f9",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794577496181
+      },
+      {
+        "executionId": "e76844c1-fcb2-43a0-9e41-b8ccb584d4f9",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794577552531
+      }
+    ],
+    "6.1 Implement `logic/stats.js`": [
+      {
+        "executionId": "093bcb2b-1438-4743-bbdf-b3e15160ed5c",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794582496388
+      },
+      {
+        "executionId": "093bcb2b-1438-4743-bbdf-b3e15160ed5c",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794582562039
+      }
+    ],
+    "6. Stats": [
+      {
+        "executionId": "093bcb2b-1438-4743-bbdf-b3e15160ed5c",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794582562906
+      }
+    ],
+    "7.1 Implement `logic/decks.js`": [
+      {
+        "executionId": "b16bce03-6ca8-4372-8651-a5334e053c10",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794585861161
+      },
+      {
+        "executionId": "b16bce03-6ca8-4372-8651-a5334e053c10",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794585948254
+      }
+    ],
+    "7. Decks": [
+      {
+        "executionId": "b16bce03-6ca8-4372-8651-a5334e053c10",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794585950997
+      }
+    ],
+    "8.1 Implement `buildQueue` in `logic/scheduler.js`": [
+      {
+        "executionId": "ec7e1cf5-6933-4b7f-afc6-bcad86e7464a",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794587939033
+      },
+      {
+        "executionId": "ec7e1cf5-6933-4b7f-afc6-bcad86e7464a",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794588029687
+      }
+    ],
+    "10.1 Implement `logic/quiz.js`": [
+      {
+        "executionId": "e5cccb9d-2aa8-4ab3-b627-cd4f1acba84c",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794591238388
+      },
+      {
+        "executionId": "e5cccb9d-2aa8-4ab3-b627-cd4f1acba84c",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794591307054
+      }
+    ],
+    "10. Quiz model": [
+      {
+        "executionId": "e5cccb9d-2aa8-4ab3-b627-cd4f1acba84c",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794591310444
+      }
+    ],
+    "12.3 Implement `logic/quizPlay.js`": [
+      {
+        "executionId": "0bd9027c-3477-4ee4-9cd0-37ffe62abeeb",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794592705115
+      },
+      {
+        "executionId": "0bd9027c-3477-4ee4-9cd0-37ffe62abeeb",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794592783231
+      }
+    ],
+    "13.1 Implement `services/aiClient.js`": [
+      {
+        "executionId": "375d362e-56e7-4750-bdea-bc2230c62c3d",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794647621006
+      },
+      {
+        "executionId": "375d362e-56e7-4750-bdea-bc2230c62c3d",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794647690464
+      }
+    ],
+    "15.1 Create the theme CSS": [
+      {
+        "executionId": "0e11b204-f832-416a-873f-66514f4786fd",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794673211672
+      },
+      {
+        "executionId": "0e11b204-f832-416a-873f-66514f4786fd",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794673295900
+      }
+    ],
+    "2.3 Implement `services/storageService.js` and `hooks/useStorage.js`": [
+      {
+        "executionId": "1f9c981f-9b8d-434b-9676-272af42f97a2",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794673565179
+      },
+      {
+        "executionId": "1f9c981f-9b8d-434b-9676-272af42f97a2",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794673625768
+      }
+    ],
+    "2. Storage": [
+      {
+        "executionId": "1f9c981f-9b8d-434b-9676-272af42f97a2",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794673626781
+      }
+    ],
+    "4.3 Implement timer state transitions in `logic/timer.js`": [
+      {
+        "executionId": "8bc6b41c-efcf-47f4-bec5-1261f248c5fd",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794674832445
+      },
+      {
+        "executionId": "8bc6b41c-efcf-47f4-bec5-1261f248c5fd",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794674883482
+      }
+    ],
+    "4. Timer and candle height": [
+      {
+        "executionId": "8bc6b41c-efcf-47f4-bec5-1261f248c5fd",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794674884807
+      }
+    ],
+    "8.3 Implement `applyResult` in `logic/scheduler.js`": [
+      {
+        "executionId": "d3cf48bf-3afa-4982-9fbd-9f0841765d55",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794829975489
+      },
+      {
+        "executionId": "d3cf48bf-3afa-4982-9fbd-9f0841765d55",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794830069844
+      },
+      {
+        "executionId": "f395f39c-b7e0-429e-b878-3e5454bcdc72",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794832085270
+      },
+      {
+        "executionId": "f395f39c-b7e0-429e-b878-3e5454bcdc72",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794832134568
+      }
+    ],
+    "8. Review scheduler": [
+      {
+        "executionId": "d3cf48bf-3afa-4982-9fbd-9f0841765d55",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794830071110
+      }
+    ],
+    "11.1 Implement `logic/fallbackGenerator.js`": [
+      {
+        "executionId": "a23b4849-1aac-43b1-a34e-7b09b1ff0d79",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794833040424
+      },
+      {
+        "executionId": "a23b4849-1aac-43b1-a34e-7b09b1ff0d79",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794833128806
+      }
+    ],
+    "11. Fallback generator": [
+      {
+        "executionId": "a23b4849-1aac-43b1-a34e-7b09b1ff0d79",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794833131998
+      }
+    ],
+    "12.1 Implement `logic/mistakes.js`": [
+      {
+        "executionId": "ef5d8ab1-ff7d-4f78-b059-14e708e4cffd",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794837032659
+      },
+      {
+        "executionId": "ef5d8ab1-ff7d-4f78-b059-14e708e4cffd",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794837128513
+      },
+      {
+        "executionId": "386740ec-dc8e-4713-9212-26fee1dec871",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794841770980
+      },
+      {
+        "executionId": "386740ec-dc8e-4713-9212-26fee1dec871",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794841869010
+      }
+    ],
+    "12. Mistakes and quiz play": [
+      {
+        "executionId": "ef5d8ab1-ff7d-4f78-b059-14e708e4cffd",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794837130147
+      }
+    ],
+    "13.2 Implement the generation flow in `logic/generateQuiz.js`": [
+      {
+        "executionId": "540ade90-0f53-4a15-958e-e9003d21c647",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794843164921
+      },
+      {
+        "executionId": "540ade90-0f53-4a15-958e-e9003d21c647",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794843294172
+      }
+    ],
+    "13. AI client and generation flow": [
+      {
+        "executionId": "540ade90-0f53-4a15-958e-e9003d21c647",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794843296023
+      }
+    ],
+    "15.2 Implement `App`, `Nav` and the error boundary": [
+      {
+        "executionId": "7d80e9b6-d36b-4fb6-9ee8-368ac3a0423b",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794847212770
+      },
+      {
+        "executionId": "7d80e9b6-d36b-4fb6-9ee8-368ac3a0423b",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794847376792
+      }
+    ],
+    "16.1 Implement `CandleVisual`": [
+      {
+        "executionId": "b047fc67-6d36-492b-ae6b-b9b147ce44cc",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794908795547
+      },
+      {
+        "executionId": "b047fc67-6d36-492b-ae6b-b9b147ce44cc",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794908908924
+      }
+    ],
+    "16.2 Implement `hooks/useCandle.js`": [
+      {
+        "executionId": "eda11a7f-a9ba-4415-882a-92d344633754",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794909256839
+      },
+      {
+        "executionId": "eda11a7f-a9ba-4415-882a-92d344633754",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794909509290
+      }
+    ],
+    "18.2 Implement `hooks/useStudySession.js`": [
+      {
+        "executionId": "f89bdd73-9039-4068-8318-8d5d849887a2",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794911399432
+      },
+      {
+        "executionId": "f89bdd73-9039-4068-8318-8d5d849887a2",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794911536807
+      }
+    ],
+    "15.3 Implement `FogLayer` and `StorageBanner`": [
+      {
+        "executionId": "dcaeb115-6aaf-4c40-96cf-999cfbd2593c",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794913052820
+      },
+      {
+        "executionId": "dcaeb115-6aaf-4c40-96cf-999cfbd2593c",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794913130798
+      }
+    ],
+    "15. Theme and app shell": [
+      {
+        "executionId": "dcaeb115-6aaf-4c40-96cf-999cfbd2593c",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794913131997
+      }
+    ],
+    "16.3 Implement `CandleScreen`": [
+      {
+        "executionId": "a1962bf2-918c-438d-a32c-804493555745",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794919286515
+      },
+      {
+        "executionId": "a1962bf2-918c-438d-a32c-804493555745",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794919401555
+      }
+    ],
+    "16. Candle screen": [
+      {
+        "executionId": "a1962bf2-918c-438d-a32c-804493555745",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1794919405274
+      }
+    ],
+    "17.1 Implement `hooks/useStats.js` and `CryptScreen`": [
+      {
+        "executionId": "7b317ea2-26e6-47dd-b1c6-16b39a43ba89",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795014599694
+      },
+      {
+        "executionId": "7b317ea2-26e6-47dd-b1c6-16b39a43ba89",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795014821225
+      }
+    ],
+    "17. Crypt screen": [
+      {
+        "executionId": "7b317ea2-26e6-47dd-b1c6-16b39a43ba89",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795014822339
+      }
+    ],
+    "18.1 Implement deck and card management UI in `GrimoireScreen`": [
+      {
+        "executionId": "14d6d478-51b9-435d-b7dc-95306a4f0227",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795083013911
+      },
+      {
+        "executionId": "14d6d478-51b9-435d-b7dc-95306a4f0227",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795083201149
+      }
+    ],
+    "19.1 Implement `hooks/useSeance.js`": [
+      {
+        "executionId": "8ab40a11-81e1-426a-ac9c-3c305318fe0b",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795085214242
+      },
+      {
+        "executionId": "8ab40a11-81e1-426a-ac9c-3c305318fe0b",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795085433963
+      }
+    ],
+    "18.3 Implement the study mode UI in `GrimoireScreen`": [
+      {
+        "executionId": "4044399b-ef96-4bf8-b33f-0d40bfcc35b8",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795188541506
+      },
+      {
+        "executionId": "4044399b-ef96-4bf8-b33f-0d40bfcc35b8",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795188688320
+      }
+    ],
+    "18. Grimoire screen": [
+      {
+        "executionId": "4044399b-ef96-4bf8-b33f-0d40bfcc35b8",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795188689808
+      }
+    ],
+    "19.2 Implement notes input and quiz play UI in `SeanceScreen`": [
+      {
+        "executionId": "f5fe00bb-03ed-4b45-812b-b7db48f33a93",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795258239038
+      },
+      {
+        "executionId": "f5fe00bb-03ed-4b45-812b-b7db48f33a93",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795258393318
+      }
+    ],
+    "19.3 Implement the save-to-Grimoire UI in `SeanceScreen`": [
+      {
+        "executionId": "da601cc7-fb4f-4ff5-89db-60e95c7b78fd",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795259906976
+      },
+      {
+        "executionId": "da601cc7-fb4f-4ff5-89db-60e95c7b78fd",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795260076725
+      }
+    ],
+    "19. Seance screen": [
+      {
+        "executionId": "da601cc7-fb4f-4ff5-89db-60e95c7b78fd",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795260078598
+      }
+    ],
+    "20. Checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "9bc240f7-a68c-477a-a9e3-c1784c6acfea",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795261219067
+      },
+      {
+        "executionId": "9bc240f7-a68c-477a-a9e3-c1784c6acfea",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795261309959
+      }
+    ],
+    "21.1 Apply the accessibility and responsive pass": [
+      {
+        "executionId": "a30ba336-45db-4519-b832-445891a31549",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795264655691
+      },
+      {
+        "executionId": "a30ba336-45db-4519-b832-445891a31549",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795264807938
+      }
+    ],
+    "21.2 Finish the README": [
+      {
+        "executionId": "bf0f57f0-047a-4c17-827c-7720dd17830f",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795265886185
+      },
+      {
+        "executionId": "bf0f57f0-047a-4c17-827c-7720dd17830f",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795266041158
+      }
+    ],
+    "21. Accessibility, responsive pass and README": [
+      {
+        "executionId": "bf0f57f0-047a-4c17-827c-7720dd17830f",
+        "chatSessionId": "sess_2453dc3d-6ed6-4a53-a104-de100e531426",
+        "timestamp": 1795266042752
+      }
+    ]
+  }
+}

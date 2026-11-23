@@ -1,0 +1,30 @@
+/* Decorative fog behind content. Low opacity keeps text contrast above 4.5:1. */
+
+.fog-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.15;
+  background:
+    radial-gradient(ellipse at 20% 80%, hsl(270, 20%, 60%) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 70%, hsl(270, 20%, 55%) 0%, transparent 55%);
+  background-size: 200% 200%;
+  animation: fog-drift 40s ease-in-out infinite alternate;
+}
+
+@keyframes fog-drift {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fog-layer {
+    animation: none;
+  }
+}

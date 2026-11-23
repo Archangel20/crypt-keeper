@@ -1,0 +1,40 @@
+/* Candle flame flicker and page-turn animation. */
+
+.candle__flame {
+  transform-origin: 50% 100%;
+  animation: candle-flicker 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes candle-flicker {
+  from {
+    transform: scale(1, 1) rotate(-1deg);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(1.05, 1.1) rotate(1deg);
+    opacity: 1;
+  }
+}
+
+/* Grimoire page turn: 500ms 3D flip */
+.card-flip {
+  transition: transform 500ms ease;
+  transform-style: preserve-3d;
+}
+
+.card-flip.is-flipped {
+  transform: rotateY(180deg);
+}
+
+/* Static flame and instant page swap under reduced motion (Req 3.7) */
+@media (prefers-reduced-motion: reduce) {
+  .candle__flame {
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+
+  .card-flip {
+    transition: none;
+  }
+}

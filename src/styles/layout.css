@@ -1,0 +1,93 @@
+/* Responsive layout. No overflow-x hiding: content must wrap down to 320px. */
+
+#root {
+  min-height: 100vh;
+  max-width: 100%;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: var(--space);
+  /* Room for the fixed bottom nav on small screens */
+  padding-bottom: calc(var(--space) + var(--touch-target) + 1.5rem);
+  overflow-wrap: anywhere;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+pre,
+code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+table {
+  max-width: 100%;
+  table-layout: fixed;
+}
+
+/* Small screens: bottom nav (under 768px) */
+.nav {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 0.25rem;
+  max-width: 100%;
+  padding: 0.25rem;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-accent);
+}
+
+.nav__item {
+  flex: 1 1 0;
+  min-width: var(--touch-target);
+  min-height: var(--touch-target);
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-text);
+  overflow-wrap: anywhere;
+}
+
+.nav__item.is-active,
+.nav__item[aria-current='page'] {
+  color: var(--color-bg);
+  background: var(--color-accent);
+  font-weight: bold;
+}
+
+/* 768px and above: nav moves to the top */
+@media (min-width: 768px) {
+  main {
+    max-width: 960px;
+    padding-bottom: var(--space);
+    padding-top: calc(var(--space) + var(--touch-target) + 1rem);
+  }
+
+  .nav {
+    top: 0;
+    bottom: auto;
+    justify-content: flex-start;
+    border-top: 0;
+    border-bottom: 1px solid var(--color-accent);
+  }
+
+  .nav__item {
+    flex: 0 0 auto;
+    padding: 0 1rem;
+  }
+}

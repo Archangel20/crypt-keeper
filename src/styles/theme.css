@@ -1,0 +1,125 @@
+/* Crypt Keeper theme: colors, typography, focus, touch targets. */
+
+/* Heading font. Uses a locally installed copy only (no network download).
+   Falls back to the stack in --font-heading when it is not available. */
+@font-face {
+  font-family: 'Creepster';
+  src: local('Creepster'), local('Creepster Regular');
+  font-display: swap;
+}
+
+:root {
+  /* Background: hue 260-290, lightness <= 20% */
+  --bg-h: 275;
+  --bg-s: 40%;
+  --bg-l: 12%;
+  --color-bg: hsl(var(--bg-h), var(--bg-s), var(--bg-l));
+  --color-surface: hsl(var(--bg-h), 35%, 17%);
+  --color-surface-raised: hsl(var(--bg-h), 32%, 20%);
+
+  /* Accent: green, hue 90-150 */
+  --accent-h: 120;
+  --color-accent: hsl(var(--accent-h), 60%, 55%);
+  --color-accent-strong: hsl(var(--accent-h), 60%, 65%);
+
+  /* Text: near white on dark background (contrast well above 4.5:1) */
+  --color-text: hsl(270, 20%, 92%);
+  --color-text-muted: hsl(270, 15%, 78%);
+
+  --font-heading: 'Creepster', 'Georgia', serif;
+  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  --font-size-body: 1rem; /* 16px minimum */
+  --focus-outline-width: 3px;
+  --touch-target: 44px;
+  --space: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: normal;
+  color: var(--color-accent);
+  overflow-wrap: anywhere;
+}
+
+p,
+li,
+label,
+button,
+input,
+select,
+textarea,
+small {
+  font-size: max(1rem, var(--font-size-body));
+}
+
+a {
+  color: var(--color-accent-strong);
+}
+
+:focus-visible {
+  outline: var(--focus-outline-width) solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+button,
+a,
+input,
+select,
+textarea,
+[role='button'],
+[role='switch'],
+[role='checkbox'] {
+  min-width: var(--touch-target);
+  min-height: var(--touch-target);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  color: var(--color-text);
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-accent);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Inline text links inside paragraphs keep a usable hit area. */
+a {
+  display: inline-flex;
+  align-items: center;
+}
