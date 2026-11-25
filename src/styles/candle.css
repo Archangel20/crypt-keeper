@@ -1,7 +1,24 @@
-/* Candle flame flicker and page-turn animation. */
+/* Wax, flame glow, flicker, and page-turn animation. */
+
+.candle-visual {
+  display: block;
+  width: min(100%, 240px);
+  margin: 1rem auto;
+  overflow: visible;
+  filter: drop-shadow(0 0 1rem rgba(255, 172, 68, 0.18));
+}
+
+.candle__body {
+  filter: drop-shadow(0 0.15rem 0.2rem rgba(54, 29, 11, 0.45));
+}
+
+.candle__wick {
+  opacity: 0.9;
+}
 
 .candle__flame {
   transform-origin: 50% 100%;
+  filter: drop-shadow(0 0 0.45rem var(--flame-edge)) drop-shadow(0 0 1rem rgba(255, 178, 64, 0.65));
   animation: candle-flicker 1.2s ease-in-out infinite alternate;
 }
 
@@ -16,7 +33,30 @@
   }
 }
 
-/* Grimoire page turn: 500ms 3D flip */
+.candle-timer__display {
+  margin: 0.5rem 0;
+  color: var(--color-accent-strong);
+  font-family: var(--font-heading);
+  font-size: clamp(2.7rem, 12vw, 5.5rem);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 1rem rgba(165, 214, 90, 0.28);
+}
+
+.candle-timer__status {
+  color: var(--color-text-muted);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.candle-timer__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+/* Grimoire page turn: 500ms 3D flip. */
 .card-flip {
   transition: transform 500ms ease;
   transform-style: preserve-3d;
@@ -26,7 +66,7 @@
   transform: rotateY(180deg);
 }
 
-/* Static flame and instant page swap under reduced motion (Req 3.7) */
+/* Static flame and instant page swap under reduced motion. */
 @media (prefers-reduced-motion: reduce) {
   .candle__flame {
     animation: none;

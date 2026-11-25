@@ -229,14 +229,14 @@ export default function GrimoireScreen() {
   };
 
   return (
-    <section aria-labelledby="grimoire-screen-title">
+    <section className="grimoire-screen" aria-labelledby="grimoire-screen-title">
       <h1 id="grimoire-screen-title">Grimoire</h1>
 
       {persistenceError ? <p role="alert">{persistenceError}</p> : null}
 
-      <section aria-labelledby="grimoire-decks-title">
+      <section className="grimoire-decks" aria-labelledby="grimoire-decks-title">
         <h2 id="grimoire-decks-title">Decks</h2>
-        <form onSubmit={handleCreateDeck}>
+        <form className="grimoire-form grimoire-form--deck" onSubmit={handleCreateDeck}>
           <label htmlFor="grimoire-deck-name">Deck name</label>
           <input
             id="grimoire-deck-name"
@@ -255,11 +255,11 @@ export default function GrimoireScreen() {
         {decks.length === 0 ? (
           <p>No decks yet.</p>
         ) : (
-          <ul aria-label="Deck list">
+          <ul className="grimoire-deck-list" aria-label="Deck list">
             {decks.map((deck) => (
-              <li key={deck.id}>
+              <li className="grimoire-deck-list__item" key={deck.id}>
                 {renamingDeckId === deck.id ? (
-                  <form onSubmit={(event) => handleRenameDeck(event, deck.id)}>
+                  <form className="grimoire-form grimoire-form--rename" onSubmit={(event) => handleRenameDeck(event, deck.id)}>
                     <label htmlFor={`rename-deck-${deck.id}`}>Deck name</label>
                     <input
                       id={`rename-deck-${deck.id}`}
@@ -300,6 +300,7 @@ export default function GrimoireScreen() {
 
       {selectedDeck ? (
         <section
+          className="grimoire-study"
           aria-labelledby="grimoire-study-title"
           tabIndex={0}
           onKeyDown={handleStudyKeyDown}
@@ -314,16 +315,16 @@ export default function GrimoireScreen() {
               <button type="button" onClick={focusAddCard}>Add a card</button>
             </>
           ) : study.complete ? (
-            <div aria-labelledby="grimoire-study-summary-title" role="status">
+            <div className="grimoire-study__summary" aria-labelledby="grimoire-study-summary-title" role="status">
               <h3 id="grimoire-study-summary-title">Study session complete</h3>
               <p>Got it: {study.gotCount}</p>
               <p>Missed it: {study.missedCount}</p>
             </div>
           ) : study.currentCard ? (
-            <div aria-label="Study card">
+            <div className="grimoire-study__card-shell" aria-label="Study card">
               <button
                 type="button"
-                className={`card-flip${study.flipped ? ' is-flipped' : ''}`}
+                className={`card-flip grimoire-study__card${study.flipped ? ' is-flipped' : ''}`}
                 onClick={study.flip}
                 aria-label={study.flipped ? 'Show front of card' : 'Flip card to show back'}
               >
@@ -333,7 +334,7 @@ export default function GrimoireScreen() {
                 Flip card
               </button>
               {study.flipped ? (
-                <div aria-label="Study answer controls">
+                <div className="grimoire-study__answers" aria-label="Study answer controls">
                   <button type="button" onClick={() => study.answer('got')}>
                     Got it
                   </button>
@@ -348,10 +349,10 @@ export default function GrimoireScreen() {
       ) : null}
 
       {selectedDeck ? (
-        <section aria-labelledby="grimoire-cards-title">
+        <section className="grimoire-cards" aria-labelledby="grimoire-cards-title">
           <h2 id="grimoire-cards-title">Cards in {selectedDeck.name}</h2>
 
-          <form onSubmit={handleAddCard}>
+          <form className="grimoire-form grimoire-form--card" onSubmit={handleAddCard}>
             <h3>Add card</h3>
             <div>
               <label htmlFor="grimoire-card-front">Front</label>
@@ -386,11 +387,11 @@ export default function GrimoireScreen() {
           {selectedDeck.cards.length === 0 ? (
             <p>This deck has no cards.</p>
           ) : (
-            <ul aria-label={`${selectedDeck.name} card list`}>
+            <ul className="grimoire-card-list" aria-label={`${selectedDeck.name} card list`}>
               {selectedDeck.cards.map((card) => (
-                <li key={card.id}>
+                <li className="grimoire-card-list__item" key={card.id}>
                   {editingCardId === card.id ? (
-                    <form onSubmit={(event) => handleEditCard(event, card.id)}>
+                    <form className="grimoire-form grimoire-form--edit-card" onSubmit={(event) => handleEditCard(event, card.id)}>
                       <label htmlFor={`edit-front-${card.id}`}>Front</label>
                       <textarea
                         id={`edit-front-${card.id}`}

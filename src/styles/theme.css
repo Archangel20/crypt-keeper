@@ -1,38 +1,37 @@
-/* Crypt Keeper theme: colors, typography, focus, touch targets. */
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
 
-/* Heading font. Uses a locally installed copy only (no network download).
-   Falls back to the stack in --font-heading when it is not available. */
-@font-face {
-  font-family: 'Creepster';
-  src: local('Creepster'), local('Creepster Regular');
-  font-display: swap;
-}
+/* Crypt Keeper theme: haunted-crypt colors, typography, focus, and touch targets. */
 
 :root {
-  /* Background: hue 260-290, lightness <= 20% */
-  --bg-h: 275;
-  --bg-s: 40%;
-  --bg-l: 12%;
-  --color-bg: hsl(var(--bg-h), var(--bg-s), var(--bg-l));
-  --color-surface: hsl(var(--bg-h), 35%, 17%);
-  --color-surface-raised: hsl(var(--bg-h), 32%, 20%);
+  --color-bg: #09070f;
+  --color-bg-deep: #050409;
+  --color-surface: #171126;
+  --color-surface-raised: #211936;
+  --color-surface-soft: rgba(34, 24, 54, 0.88);
+  --color-border: #49346a;
+  --color-accent: #a5d65a;
+  --color-accent-strong: #c6f47b;
+  --color-accent-muted: #71983c;
+  --color-purple: #9d6bd3;
+  --color-purple-bright: #c39af2;
+  --color-text: #f3eff8;
+  --color-text-muted: #c7bdd5;
+  --color-danger: #ff9f9f;
+  --candle-wax: #e5bf72;
+  --flame-core: #fff3aa;
+  --flame-edge: #ff9c3f;
 
-  /* Accent: green, hue 90-150 */
-  --accent-h: 120;
-  --color-accent: hsl(var(--accent-h), 60%, 55%);
-  --color-accent-strong: hsl(var(--accent-h), 60%, 65%);
-
-  /* Text: near white on dark background (contrast well above 4.5:1) */
-  --color-text: hsl(270, 20%, 92%);
-  --color-text-muted: hsl(270, 15%, 78%);
-
-  --font-heading: 'Creepster', 'Georgia', serif;
+  --font-heading: 'Creepster', 'Georgia', 'Times New Roman', serif;
   --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
-  --font-size-body: 1rem; /* 16px minimum */
+  --font-size-body: 1rem;
   --focus-outline-width: 3px;
   --touch-target: 44px;
   --space: 1rem;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --glow-green: 0 0 0.65rem rgba(165, 214, 90, 0.35);
+  --glow-purple: 0 0 1rem rgba(157, 107, 211, 0.3);
 }
 
 *,
@@ -46,8 +45,11 @@ html {
 }
 
 body {
+  min-height: 100vh;
   margin: 0;
-  background: var(--color-bg);
+  background:
+    radial-gradient(circle at 50% -10%, rgba(83, 48, 123, 0.3), transparent 44rem),
+    linear-gradient(135deg, var(--color-bg-deep), var(--color-bg) 52%, #100a1d);
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: var(--font-size-body);
@@ -58,10 +60,26 @@ h1,
 h2,
 h3,
 h4 {
+  margin-top: 0;
   font-family: var(--font-heading);
   font-weight: normal;
-  color: var(--color-accent);
+  letter-spacing: 0.035em;
+  color: var(--color-accent-strong);
+  text-shadow: 0 0 0.8rem rgba(165, 214, 90, 0.22);
   overflow-wrap: anywhere;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+}
+
+h3 {
+  font-size: clamp(1.35rem, 4vw, 2rem);
 }
 
 p,
@@ -75,12 +93,17 @@ small {
   font-size: max(1rem, var(--font-size-body));
 }
 
+p,
+li {
+  overflow-wrap: anywhere;
+}
+
 a {
   color: var(--color-accent-strong);
 }
 
 :focus-visible {
-  outline: var(--focus-outline-width) solid var(--color-accent);
+  outline: var(--focus-outline-width) solid var(--color-accent-strong);
   outline-offset: 2px;
 }
 
@@ -103,14 +126,26 @@ textarea {
   font-family: inherit;
   color: var(--color-text);
   background: var(--color-surface-raised);
-  border: 1px solid var(--color-accent);
-  border-radius: 6px;
-  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.8rem;
   max-width: 100%;
 }
 
 button {
   cursor: pointer;
+  background: linear-gradient(180deg, #302449, #211936);
+  border-color: var(--color-accent-muted);
+  box-shadow: var(--glow-purple), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease, background 160ms ease;
+}
+
+button:hover:not(:disabled),
+button[aria-pressed='true'] {
+  background: linear-gradient(180deg, #3b2b58, #28203f);
+  border-color: var(--color-accent);
+  box-shadow: var(--glow-green), var(--glow-purple), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
 }
 
 button:disabled {
@@ -118,8 +153,34 @@ button:disabled {
   opacity: 0.7;
 }
 
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(165, 214, 90, 0.18);
+}
+
+textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+::selection {
+  color: var(--color-bg-deep);
+  background: var(--color-accent-strong);
+}
+
 /* Inline text links inside paragraphs keep a usable hit area. */
 a {
   display: inline-flex;
   align-items: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

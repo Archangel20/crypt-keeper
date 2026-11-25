@@ -1,4 +1,4 @@
-/* Responsive layout. No overflow-x hiding: content must wrap down to 320px. */
+/* Responsive layout and haunted-crypt surfaces. Content wraps down to 320px. */
 
 #root {
   min-height: 100vh;
@@ -11,9 +11,12 @@ main {
   max-width: 100%;
   margin: 0 auto;
   padding: var(--space);
-  /* Room for the fixed bottom nav on small screens */
   padding-bottom: calc(var(--space) + var(--touch-target) + 1.5rem);
   overflow-wrap: anywhere;
+}
+
+main > section {
+  max-width: 100%;
 }
 
 img,
@@ -35,7 +38,6 @@ table {
   table-layout: fixed;
 }
 
-/* Small screens: bottom nav (under 768px) */
 .nav {
   position: fixed;
   z-index: 2;
@@ -45,11 +47,13 @@ table {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 0.25rem;
+  gap: 0.35rem;
   max-width: 100%;
-  padding: 0.25rem;
-  background: var(--color-surface);
-  border-top: 1px solid var(--color-accent);
+  padding: 0.4rem;
+  background: rgba(16, 10, 29, 0.94);
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 -0.5rem 1.5rem rgba(4, 2, 10, 0.5), 0 0 1rem rgba(157, 107, 211, 0.16);
+  backdrop-filter: blur(10px);
 }
 
 .nav__item {
@@ -57,20 +61,187 @@ table {
   min-width: var(--touch-target);
   min-height: var(--touch-target);
   justify-content: center;
+  padding: 0.55rem 0.75rem;
   text-align: center;
   text-decoration: none;
-  color: var(--color-text);
+  color: var(--color-text-muted);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
   overflow-wrap: anywhere;
+  transition: color 160ms ease, border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+.nav__item:hover,
+.nav__item.is-active,
+.nav__item[aria-current='page'] {
+  color: var(--color-accent-strong);
+  background: rgba(113, 152, 60, 0.16);
+  border-color: var(--color-accent-muted);
+  box-shadow: var(--glow-green);
 }
 
 .nav__item.is-active,
 .nav__item[aria-current='page'] {
-  color: var(--color-bg);
-  background: var(--color-accent);
   font-weight: bold;
 }
 
-/* 768px and above: nav moves to the top */
+.crypt-destinations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.crypt-destinations__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--touch-target);
+  padding: 0.75rem 1rem;
+  color: var(--color-accent-strong);
+  text-align: center;
+  text-decoration: none;
+  background: linear-gradient(135deg, rgba(46, 31, 75, 0.94), rgba(25, 18, 43, 0.96));
+  border: 1px solid var(--color-accent-muted);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--glow-purple), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: color 160ms ease, background 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.crypt-destinations__link:hover {
+  color: var(--color-bg-deep);
+  background: var(--color-accent);
+  box-shadow: 0 0 1.2rem rgba(165, 214, 90, 0.55);
+  transform: translateY(-2px);
+}
+
+main > section > section,
+.candle-timer,
+.candle-settings,
+.candle-completion {
+  margin-top: 1.25rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  background: linear-gradient(145deg, rgba(31, 21, 52, 0.91), rgba(18, 12, 31, 0.92));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 1rem 2.5rem rgba(2, 1, 7, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+main > section > section:first-of-type {
+  margin-top: 0;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+  gap: 0.75rem;
+  margin: 0;
+}
+
+dl > div {
+  padding: 0.9rem;
+  background: rgba(9, 7, 15, 0.42);
+  border: 1px solid rgba(157, 107, 211, 0.38);
+  border-radius: var(--radius-sm);
+}
+
+dt {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+dd {
+  margin: 0.25rem 0 0;
+  color: var(--color-accent-strong);
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  font-weight: 700;
+}
+
+form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+form > div,
+.candle-settings__field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+.grimoire-deck-list,
+.grimoire-card-list {
+  display: grid;
+  gap: 0.8rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.grimoire-deck-list__item,
+.grimoire-card-list__item,
+.grimoire-study__card-shell {
+  min-width: 0;
+  padding: clamp(0.9rem, 3vw, 1.25rem);
+  background:
+    linear-gradient(rgba(255, 245, 197, 0.94), rgba(226, 199, 128, 0.96)),
+    repeating-linear-gradient(0deg, transparent 0 1.6rem, rgba(83, 47, 23, 0.08) 1.62rem 1.68rem);
+  color: #2d1d22;
+  border: 1px solid #9f7843;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0.7rem 1.3rem rgba(2, 1, 5, 0.35), inset 0 0 1.5rem rgba(126, 77, 30, 0.12);
+}
+
+.grimoire-deck-list__item button,
+.grimoire-card-list__item button,
+.grimoire-study__card-shell button {
+  margin: 0.25rem 0.25rem 0 0;
+}
+
+.grimoire-deck-list__item > span,
+.grimoire-card-list__item p,
+.grimoire-deck-list__item label,
+.grimoire-card-list__item label {
+  color: #3b2930;
+}
+
+.grimoire-study__card {
+  width: 100%;
+  min-height: 9rem;
+  color: #2d1d22;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  font-family: var(--font-heading);
+  font-size: clamp(1.7rem, 5vw, 2.8rem);
+  line-height: 1.2;
+  white-space: normal;
+}
+
+.grimoire-study__card:hover:not(:disabled) {
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+.grimoire-study__summary,
+.grimoire-study__answers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.grimoire-card-list__item textarea,
+.grimoire-deck-list__item input,
+.grimoire-card-list__item input {
+  color: var(--color-text);
+  background: rgba(20, 13, 31, 0.94);
+  border-color: var(--color-accent-muted);
+}
+
 @media (min-width: 768px) {
   main {
     max-width: 960px;
@@ -83,11 +254,25 @@ table {
     bottom: auto;
     justify-content: flex-start;
     border-top: 0;
-    border-bottom: 1px solid var(--color-accent);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 0.5rem 1.5rem rgba(4, 2, 10, 0.5), 0 0 1rem rgba(157, 107, 211, 0.16);
   }
 
   .nav__item {
     flex: 0 0 auto;
-    padding: 0 1rem;
+    padding: 0.55rem 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  main {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .nav__item,
+  .crypt-destinations__link {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }

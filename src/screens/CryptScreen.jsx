@@ -52,9 +52,10 @@ export default function CryptScreen({ onNavigate = () => {} }) {
         </dl>
       </section>
 
-      <nav aria-label="Crypt destinations">
+      <nav className="crypt-destinations" aria-label="Crypt destinations">
         {DESTINATIONS.map(({ id, label }) => (
           <a
+            className="crypt-destinations__link"
             href={`#${id}`}
             key={id}
             onClick={(event) => navigate(event, id)}

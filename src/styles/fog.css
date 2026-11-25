@@ -1,4 +1,4 @@
-/* Decorative fog behind content. Low opacity keeps text contrast above 4.5:1. */
+/* Decorative fog behind content. It never captures input or changes layout. */
 
 .fog-layer {
   position: fixed;
@@ -6,25 +6,57 @@
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  opacity: 0.15;
+  opacity: 0.18;
   background:
-    radial-gradient(ellipse at 20% 80%, hsl(270, 20%, 60%) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 70%, hsl(270, 20%, 55%) 0%, transparent 55%);
-  background-size: 200% 200%;
-  animation: fog-drift 40s ease-in-out infinite alternate;
+    radial-gradient(ellipse at 18% 80%, rgba(166, 143, 194, 0.5) 0%, transparent 58%),
+    radial-gradient(ellipse at 82% 68%, rgba(126, 161, 91, 0.32) 0%, transparent 54%),
+    radial-gradient(ellipse at 50% 110%, rgba(113, 82, 160, 0.4) 0%, transparent 62%);
+  background-size: 210% 190%, 180% 220%, 190% 180%;
+  background-position: 0% 50%, 100% 35%, 50% 100%;
+  animation: fog-drift 42s ease-in-out infinite alternate;
+}
+
+.fog-layer::before,
+.fog-layer::after {
+  position: absolute;
+  inset: -20%;
+  content: '';
+  pointer-events: none;
+  background: radial-gradient(ellipse, rgba(218, 211, 226, 0.2) 0%, transparent 62%);
+  filter: blur(1.5rem);
+}
+
+.fog-layer::before {
+  animation: fog-bank 58s ease-in-out infinite alternate;
+}
+
+.fog-layer::after {
+  opacity: 0.7;
+  animation: fog-bank 73s ease-in-out -18s infinite alternate-reverse;
 }
 
 @keyframes fog-drift {
   from {
-    background-position: 0% 50%;
+    background-position: 0% 50%, 100% 35%, 50% 100%;
   }
   to {
-    background-position: 100% 50%;
+    background-position: 100% 42%, 0% 58%, 35% 90%;
+  }
+}
+
+@keyframes fog-bank {
+  from {
+    transform: translate3d(-4%, 2%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(5%, -3%, 0) scale(1.08);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .fog-layer {
+  .fog-layer,
+  .fog-layer::before,
+  .fog-layer::after {
     animation: none;
   }
 }
